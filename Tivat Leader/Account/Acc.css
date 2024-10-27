@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #315961;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.sidebar.shrinked {
+  width: 100%; /* Shrink the sidebar to full width of row on scroll */
+  flex-direction: row;
+  height: 60px;
+  justify-content: space-around;
+}
+
+.sidebar.shrinked .nav ul {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.profile-header {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-header h3 {
+  margin: 5px 0;
+}
+
+.profile-header p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav li {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav li:hover {
+  background-color: #224046;
+}
+
+.nav .icon {
+  margin-right: 10px;
+}
+
+.nav .label {
+  font-size: 16px;
+}
+
+.main-content {
+  padding: 20px;
+  flex-grow: 1;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.shrinked {
+  margin-left: 0;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.overview-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+
+.detail-item label {
+  font-weight: bold;
+  color: #333;
+  width: 40%;
+}
+
+.detail-item span {
+  color: #555;
+}
+
+#cropper-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+button {
+  background-color: #315960;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #224046;
+}
+
+.hidden {
+  display: none;
+}
+
+#postContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#createPostButton {
+  padding: 10px 20px;
+  background-color: #315960;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#createPostButton:hover {
+  background-color: #224046;
+}
+
+/* Mobile view adjustments */
+@media only screen and (max-width: 767px) {
+  /* Sidebar transforms to top nav with icons in rows */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #315961;
+    display: flex;
+    justify-content: space-evenly; /* Distribute icons evenly */
+    padding: 10px 0;
+    flex-wrap: wrap;
+    z-index: 10; /* Ensure it's above the main content */
+  }
+
+  /* Hide the text labels on mobile, showing only icons */
+  .nav li .label {
+    display: none;
+  }
+
+  .nav li {
+    display: inline-flex;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Profile header with proper spacing */
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: #315961;
+  }
+
+  .profile-header img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+  }
+
+  .profile-header h3, .profile-header p {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  /* Ensure that sections start with enough spacing */
+  .main-content {
+    padding-top: 30px; /* Adjust for profile header and navbar */
+    padding-left: 10px;
+    padding-right: 10px;
+   margin-top: 250px;
+   
+  }
+
+  /* Overview and settings sections styling */
+  .overview-details, .settings-form {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* For readability, improve form input styling */
+  .settings-form input, .settings-form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+}
+
+
+
+/* Styling for the Settings Form */
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings-form label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.settings-form input, .settings-form select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.settings-form button {
+  padding: 10px 20px;
+  background-color: #315960;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.settings-form button:hover {
+  background-color: #224046;
+}
+@media only screen and (min-width: 767px) {
+  .main-content{
+    margin-left: 250px;
+  }
+}

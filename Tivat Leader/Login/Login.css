@@ -1,0 +1,212 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-image: url('bg.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh; /* Ensures the body takes full viewport height */
+}
+  
+  :root {
+    --primary-color: #03292d;
+    --second-color: #ffffff;
+    --black-color: #000000;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--second-color);
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: transparent;
+  }
+  
+  .login_box {
+    position: relative;
+    width: 450px;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    background-color: #0f5a62;
+  }
+  
+  .login-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block; /* Make it expand to fit the text */
+    white-space: nowrap;   /* Prevent text wrapping */
+    background-color: var(--primary-color);
+    height: 70px; /* Adjust height as needed */
+    border-radius: 0 0 20px 20px;
+    z-index: 1; /* Ensure the header is above other elements */
+    padding: 0 20px; /* Optional padding */
+    text-align: center; /* Center text */
+    align-items: center;
+}
+  
+  .login-header span {
+    font-size: 30px; /* Adjust font size as needed */
+    color: var(--second-color);
+    line-height: 55px; /* Match this to the height of the header */
+  }
+  
+  .input_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  
+  .input-field {
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: transparent;
+    color: var(--black-color);
+    padding-left: 50px;  /* Space for the icon */
+    padding-right: 50px; /* Space for the show/hide icon */
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    outline: none;
+  }
+  
+  .label {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    transition: 0.2s;
+    color: var(--black-color);
+    pointer-events: none;
+  }
+  
+  .input-field:focus ~ .label,
+  .input-field:valid ~ .label {
+    top: -10px;
+    left: 50px;
+    font-size: 14px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    color: var(--second-color);
+    padding: 0 10px;
+  }
+  
+  .icon {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    font-size: 20px;
+    color: var(--black-color);
+  }
+  
+  /* Password Show/Hide Icon Styling */
+  .password-toggle {
+    position: absolute;
+    top: 18px;
+    right: 20px; /* Positioned to the right inside input */
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--black-color);
+  }
+  
+  .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+  
+  .input-submit {
+    width: 100%;
+    height: 50px;
+    background: var(--primary-color);
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #ffffff;
+  }
+  
+  .input-submit:hover {
+    background: #5e898e;
+  }
+  
+  .register {
+    text-align: center;
+  }
+  
+  .register a {
+    font-weight: 500;
+  }
+  .loading-container {
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    color: var(--second-color); /* Text color */
+    position: fixed; /* Fixed position to overlay the entire screen */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it's above other content */
+    display: none; /* Initially hidden */
+  }
+  
+  
+  @media only screen and (max-width: 564px) {
+    .wrapper {
+      padding: 20px;
+    }
+  
+    .login_box {
+      padding: 7.5em 1.5em 4em 1.5em;
+    }
+  }
+  .go-back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #0f5a62 ;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.go-back-button:hover {
+    background-color: #1a323a;
+}
+
+.go-back-button i {
+    margin-right: 5px; /* Add space between icon and text */
+}

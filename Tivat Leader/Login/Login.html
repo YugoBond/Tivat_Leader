@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log in</title>
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&display=swap'>
+  <link rel="stylesheet" href="Login.css">
+  <link rel="icon" href="../user.png">
+</head>
+<body>
+<div class="wrapper">
+  <button class="go-back-button" onclick="window.location.href='../Main/main.html'">
+    <i class='bx bx-arrow-back'></i> Go Back
+  </button>
+  <div class="login_box">
+    <div class="login-header">
+      <span id="form-title">Login</span>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm">
+      <div class="input_box">
+        <input type="email" id="email" class="input-field" required>
+        <label for="email" class="label">Email</label>
+        <i class="bx bx-envelope icon"></i>
+      </div>
+
+      <div class="input_box password-container">
+        <input type="password" id="password" class="input-field" required>
+        <label for="password" class="label">Password</label>
+        <i class="bx bx-lock-alt icon"></i>
+        <i class="bx bx-show password-toggle" id="toggle-password"></i>
+      </div>
+
+      <div class="remember-forgot">
+        <div class="remember-me">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div>
+        <div class="forgot">
+          <a href="#" id="switch-to-forgot-password-link">Forgot password?</a>
+        </div>
+      </div>
+
+      <div class="input_box">
+        <input type="submit" id="login-btn" class="input-submit" value="Login">
+      </div>
+
+      <div class="register">
+        <span>Don't have an account? <a href="#" id="switch-to-signup-link">Register</a></span>
+      </div>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div id="signupForm" style="display:none;">
+      <div class="input_box">
+        <input type="text" id="first-name" class="input-field" required>
+        <label for="first-name" class="label">First Name</label>
+        <i class="bx bx-user icon"></i>
+      </div>
+
+      <div class="input_box">
+        <input type="text" id="last-name" class="input-field" required>
+        <label for="last-name" class="label">Last Name</label>
+        <i class="bx bx-user icon"></i>
+      </div>
+
+      <div class="input_box">
+        <input type="email" id="signup-email" class="input-field" required>
+        <label for="signup-email" class="label">Email</label>
+        <i class="bx bx-envelope icon"></i>
+      </div>
+
+      <div class="input_box password-container">
+        <input type="password" id="signup-password" class="input-field" required>
+        <label for="signup-password" class="label">Password</label>
+        <i class="bx bx-lock-alt icon"></i>
+        <i class="bx bx-show password-toggle" id="toggle-signup-password"></i>
+      </div>
+
+      <div class="input_box password-container">
+        <input type="password" id="repeat-password" class="input-field" required>
+        <label for="repeat-password" class="label">Repeat Password</label>
+        <i class="bx bx-lock-alt icon"></i>
+        <i class="bx bx-show password-toggle" id="toggle-repeat-password"></i>
+      </div>
+
+      <div class="input_box">
+        <input type="submit" id="signup-btn" class="input-submit" value="Sign Up">
+      </div>
+
+      <div class="register">
+        <span>Already have an account? <a href="#" id="switch-to-login-link">Login</a></span>
+      </div>
+    </div>
+
+    <!-- Forgot Password Form -->
+    <div id="forgotPasswordForm" style="display:none;">
+        <div class="login-header">
+          <span id="form-title">Forgot Password</span>
+        </div>
+      
+        <div class="input_box">
+          <input type="email" id="forgot-password-email" class="input-field" required>
+          <label for="forgot-password-email" class="label">Enter Your Email</label>
+          <i class="bx bx-envelope icon"></i>
+        </div>
+      
+        <div class="input_box">
+          <input type="submit" id="forgot-password-btn" class="input-submit" value="Submit">
+        </div>
+      
+        <div class="register">
+          <span>Remember your password? <a href="#" id="switch-to-login-link-from-forgot">Login</a></span>
+        </div>
+      </div>
+  </div>
+        <!-- Loading Container -->
+        <div class="loading-container" id="loading-container" style="display:none;">
+          <img src="../loading.gif" alt="Loading..." id="loading-image"> <!-- Loading GIF here -->
+              <p>Successful, redirecting to website!</p>
+        </div>
+</div>
+<script src="Login.js"></script>
+</body>
+</html>

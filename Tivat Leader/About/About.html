@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="About.css">
+    <link rel="icon" href="../icon.png">
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Tivat Leader</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-bar">
+      <i class="bx bx-menu sidebarOpen"></i>
+      <span class="logo navLogo"><a href="#"><img src="../Logotransparent.png" alt=""></a></span>
+  
+      <div class="menu">
+        <div class="logo-toggle">
+          <span class="logo"><a href="#"><img src="../Logotransparent.png" alt=""></a></span>
+          <i class="bx bx-x siderbarClose"></i>
+        </div>
+  
+        <!-- Dropdown menu in mobile view -->
+        <ul class="nav-links">
+          <li><a href="../Main/main.html"><img src="../home.png"></a></li>
+          <li class="category-dropdown">
+            <a href="#" class="category-btn"><img src="../category.png" /></a>
+            <!-- Category dropdown -->
+            <ul class="dropdown">
+              <li><a href="../search.html?category=Agriculture" data-category="Agriculture">Agriculture</a></li>
+              <li><a href="../search.html?category=Banking" data-category="Banking">Banking</a></li>
+              <li><a href="../search.html?category=Betting" data-category="Betting">Betting</a></li>
+              <li><a href="../search.html?category=Electronics" data-category="Electronics">Electronics</a></li>
+              <li><a href="../search.html?category=Gas, Chemicals" data-category="Gas, Chemicals">Gas, Chemicals</a></li>              <li><a href="../search.html?category=Hospitality" data-category="Hospitality">Hospitality</a></li>
+              <li><a href="../search.html?category=Healthcare" data-category="Healthcare">Healthcare</a></li>
+              <li><a href="../search.html?category=IT" data-category="IT">IT</a></li>
+              <li><a href="../search.html?category=Manufacturing" data-category="Manufacturing">Manufacturing</a></li>
+              <li><a href="../search.html?category=Private" data-category="Private">Private</a></li>
+              <li><a href="../search.html?category=Restaurants" data-category="Restaurants">Restaurants</a></li>
+              <li><a href="../search.html?category=Retail" data-category="Retail">Retail</a></li>
+              <li><a href="../search.html?category=Tourism" data-category="Tourism">Tourism</a></li>
+              <li><a href="../search.html?category=Wholesale" data-category="Wholesale">Wholesale</a></li>
+            </ul>
+          </li>
+          <li><a href="../Calendar/Calendar.html"><img src="../calendar.png"></a></li>
+          <li><a href="../Transport/Transport.html"><img src="../taxi.png"></a></li>
+          <li><a href="../Post/Post.html" id="posting-btn"><img src="../plus.png"></a></li>
+          <li><a href="../Saved/Saved.html" id="saved-btn"><img src="../saved.png"></a></li>
+          <li><a href="../Cart/Cart.html" id="cart-btn"><img src="../shopping-bag.png"></a></li>
+          <div id="auth-modal" class="modal">
+            <div id="modal-content" class="modal-content">
+              <p>Please log in or sign up to continue.</p>
+              <button id="signup-btn">Sign Up</button>
+              <button id="login-btn">Log In</button>
+            </div>
+          </div>
+          <li><a href="../About/About.html"><img src="../info.png"></a></li>
+          <li><a href="../Login/Login.html" id="sign-up-btn">Sign up</a></li>
+          <li id="user-menu" style="display: none;">
+            <a href="#" id="user-popup"><img src="../user.png" alt="User"></a>
+            <ul class="dropdown" id="user-dropdown" style="display: none;">
+              <li><a href="../Account/Acc.html" id="account-btn">Account</a></li>
+              <li><a href="#" id="logout-btn">Log Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="darkLight-searchBox">
+        <div class="dark-light">
+          <i class="bx bx-moon moon"></i>
+          <i class="bx bx-sun sun"></i>
+        </div>
+
+        <div class="searchBox">
+          <div class="searchToggle">
+            <i class="bx bx-x cancel"></i>
+            <i class="bx bx-search search"></i>
+          </div>
+
+          <div class="search-field">
+            <input type="text" placeholder="Search..." />
+            <i class="bx bx-search"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <footer>
+    <div class="footer-content">
+        <div class="footer-section contact-details">
+            <h3>Contact Us</h3>
+            <p>Email: danilo.milasevic.business@gmail.com</p>
+            <p>Phone: +382 68 503 633</p>
+        </div>
+        <div class="footer-section copyright">
+            <p>&copy; 2024 Tivat Leader. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+  <script src="About.js"></script>
+</body>
+</html>

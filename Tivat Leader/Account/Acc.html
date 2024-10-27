@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your account</title>
+    <link rel="stylesheet" href="Acc.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+    <link rel="icon" href="../user.png">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-header">
+                <img id="profile-pic" src="path/to/default-pic.jpg" alt="Profile Picture">
+                <h3 id="username"></h3>
+                <p id="user-status">User</p> <!-- Adjust to "Admin" when relevant -->
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li id="dashboard-btn"><i class="bx bxs-dashboard"></i> <span class="label">Overview</span></li>
+                    <li id="posts-btn"><i class="bx bx-edit"></i> <span class="label">Posts</span></li>
+                    <li id="saved-posts-btn"><i class="bx bxs-bookmarks"></i><span class="label">Saved Posts</span></li>
+                    <li id="settings-btn"><i class="bx bxs-cog"></i> <span class="label">Settings</span></li>
+                    <li id="logout-btn"><i class="bx bxs-log-out"></i> <span class="label">Log Out</span></li>
+                    <li id="delete-account-btn"><i class="bx bxs-user-x"></i> <span class="label">Delete Account</span></li>
+                    <li id="back-home-btn"><i class="bx bx-home-alt"></i> <span class="label">Back to Home</span></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="overview-section" class="section active">
+                <h2>Overview</h2>
+                <div class="overview-details">
+                    <div class="detail-item">
+                        <label>First Name:</label>
+                        <span id="overview-first-name">John</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Last Name:</label>
+                        <span id="overview-last-name">Doe</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Email:</label>
+                        <span id="overview-email">johndoe@gmail.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Phone:</label>
+                        <span id="overview-phone">+123456789</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Country:</label>
+                        <span id="overview-nation">USA</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Gender:</label>
+                        <span id="overview-gender">Male</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Birth Date:</label>
+                        <span id="overview-birth-date">1990-01-01</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="settings-section" class="section hidden">
+                <h2>Settings</h2>
+                <form id="edit-profile-form" class="form">
+                    <label>First Name: <input type="text" id="first-name"></label>
+                    <br>
+                    <label>Last Name: <input type="text" id="last-name"></label>
+                    <br>
+                    <label>Email: <input type="email" id="email"></label>
+                    <br>
+                    <label>Password: <input type="password" id="password"></label>
+                    <br>
+                    <label>Profile Picture: <input type="file" id="profile-pic-input" accept="image/*"></label>
+                    <br>
+                    <label>Birthday: <input type="date" id="birth-date"></label>
+                    <br>
+                    <label>Gender: 
+                        <select id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </label>
+                    <br>
+                    <label>Phone Number: <input type="tel" id="phone"></label>
+                    <br>
+                    <label>Country: <input type="text" id="nation"></label>
+                    <br>
+                    <button type="button" id="save-btn">Save Changes</button>
+                    <br>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                </form>
+            </section>
+            <section id="posts-section" class="section hidden">
+                <h2>Your Posts</h2>
+                <div id="user-posts-container"></div> <!-- Container for dynamically generated posts -->
+            </section>
+
+            <!-- Cropper Container -->
+            <div id="cropper-container" style="display: none;">
+                <img id="cropper-image" style="max-width: 100%;">
+                <button id="crop-btn">Crop & Save</button>
+            </div>
+            <div id="editPopup" style="display:none;">
+                <h3>Edit Post</h3>
+                <label>Title:</label>
+                <input type="text" id="editTitle" />
+                <label>Description:</label>
+                <textarea id="editDescription"></textarea>
+                <label>Category:</label>
+                <input type="text" id="editCategory" />
+                <label>Location:</label>
+                <input type="text" id="editLocation" />
+                <label>Price:</label>
+                <input type="text" id="editPrice" />
+                <button id="saveEdit">Save</button>
+                <button id="cancelEdit">Cancel</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="Acc.js"></script>
+</body>
+</html>
